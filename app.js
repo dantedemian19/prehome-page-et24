@@ -95,6 +95,15 @@ window.addEventListener('keydown', function (e) {
     }
 });
 
+function infiniteAnimation() {
+    window.setTimeout(function () {
+        go(1);
+        infiniteAnimation();
+    }, 3000);
+}
+
+infiniteAnimation();
+
 function lerp(start, end, amount) {
     return (1 - amount) * start + amount * end
 }
