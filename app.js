@@ -181,6 +181,7 @@ function mouseup(e) {
         endY = null;
     }
 }
+if (window.matchMedia("(min-width: 700px)")){
 window.addEventListener('mousedown', mousedown, false);
 window.addEventListener('touchstart', mousedown, false);
 window.addEventListener('touchmove', function (e) {
@@ -188,6 +189,7 @@ window.addEventListener('touchmove', function (e) {
         endY = e.touches[0].clientY || e.targetTouches[0].clientY;
     }
 }, false);
+
 window.addEventListener('touchend', mouseup, false);
 window.addEventListener('mouseup', mouseup, false);
 
@@ -203,5 +205,7 @@ function wheel(e) {
         }
     })
 }
+
 window.addEventListener('mousewheel', wheel, false);
 window.addEventListener('wheel', wheel, false);
+}

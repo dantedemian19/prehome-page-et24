@@ -189,6 +189,7 @@ h1>p {
 img {
     width: 100px;
     margin-bottom: 30px;
+    background-attachment: fixed;
 }
 
 @media screen and (max-width: 550px) and (min-width: 420px) {
