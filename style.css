@@ -245,7 +245,7 @@ img {
     }
 }
 
-@media screen and (max-width: 420px) and (min-width: 380px) {
+@media screen and (max-width: 550px) and (min-width: 380px) {
     h1 {
         font-size: 50px;
     }
@@ -294,6 +294,7 @@ img {
 
     h1>p {
         font-size: 22px;
+        margin-top: -30px;
     }
 
     .buttons {

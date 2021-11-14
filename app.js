@@ -14,7 +14,7 @@ let playing = false;
 for (let i in images) {
     new Image().src = images[i];
 }
-if (window.matchMedia("(min-width: 700px)")){
+
 for (let col = 0; col < cols; col++) {
     let part = document.createElement('div');
     part.className = 'part';
@@ -94,13 +94,13 @@ window.addEventListener('keydown', function (e) {
         go(-1);
     }
 });
-
+if (window.matchMedia("(min-width: 700px)").matches){
 function infiniteAnimation() {
     window.setTimeout(function () {
         go(1);
         infiniteAnimation();
     }, 5000);
-}
+}}
 
 infiniteAnimation();
 
@@ -131,7 +131,7 @@ if ('ontouchstart' in window) {
 
 cursor.style.setProperty('--size', size + 'px');
 cursorF.style.setProperty('--size', sizeF + 'px');
-
+if (window.matchMedia("(min-width: 700px)").matches){
 window.addEventListener('mousemove', function (e) {
     pageX = e.clientX;
     pageY = e.clientY;
@@ -209,19 +209,18 @@ function wheel(e) {
 window.addEventListener('mousewheel', wheel, false);
 window.addEventListener('wheel', wheel, false);
 }
-else{
-    var myIndex = 0;
-    carousel();
-
-    function carousel() {
-        var i;
-        var x = document.getElementsByClassName("part");
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";  
-        }
-        myIndex++;
-        if (myIndex > x.length) {myIndex = 1}    
-        x[myIndex-1].style.display = "block";  
-        setTimeout(carousel, 2500);    
-}
+    else{
+    function infiniteAnimation() {
+        window.setTimeout(function () {
+            changeImage();
+            infiniteAnimation();
+        }, 1000);
+    }
+    function changeImage() {
+        let img = document.getElementsByClassName('img');
+        img.src = images[current];  
+        if (current >= images.length-1) current = 0;
+        else if (current < 0) current = images.length - 1;
+        else current++;
+    }   
 }
