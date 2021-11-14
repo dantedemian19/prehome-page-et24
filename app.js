@@ -94,20 +94,20 @@ window.addEventListener('keydown', function (e) {
         go(-1);
     }
 });
-if (window.matchMedia("(min-width: 700px)").matches){
+
 function infiniteAnimation() {
     window.setTimeout(function () {
         go(1);
         infiniteAnimation();
     }, 5000);
-}}
+}
 
 infiniteAnimation();
 
 function lerp(start, end, amount) {
     return (1 - amount) * start + amount * end
 }
-
+if (window.matchMedia("(min-width: 700px)").matches){
 const cursor = document.createElement('div');
 cursor.className = 'cursor';
 
@@ -131,7 +131,9 @@ if ('ontouchstart' in window) {
 
 cursor.style.setProperty('--size', size + 'px');
 cursorF.style.setProperty('--size', sizeF + 'px');
-if (window.matchMedia("(min-width: 700px)").matches){
+
+
+
 window.addEventListener('mousemove', function (e) {
     pageX = e.clientX;
     pageY = e.clientY;
@@ -208,19 +210,4 @@ function wheel(e) {
 
 window.addEventListener('mousewheel', wheel, false);
 window.addEventListener('wheel', wheel, false);
-}
-    else{
-    function infiniteAnimation() {
-        window.setTimeout(function () {
-            changeImage();
-            infiniteAnimation();
-        }, 1000);
-    }
-    function changeImage() {
-        let img = document.getElementsByClassName('img');
-        img.src = images[current];  
-        if (current >= images.length-1) current = 0;
-        else if (current < 0) current = images.length - 1;
-        else current++;
-    }   
 }

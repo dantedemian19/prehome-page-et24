@@ -33,6 +33,7 @@ body {
     height: 100vh;
     position: relative;
     overflow: hidden;
+    
 }
 
 #main .part .section img {
@@ -42,6 +43,9 @@ body {
     position: absolute;
     left: var(--x);
     pointer-events: none;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .buttons {
@@ -193,14 +197,7 @@ img {
     background-repeat: no-repeat;
     background-size: cover;
 }
-.mySlides {
-  display:none;
-  width: 100%;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+
 
 @media screen and (max-width: 550px) and (min-width: 420px) {
     h1 {
