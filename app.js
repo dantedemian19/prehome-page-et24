@@ -14,7 +14,7 @@ let playing = false;
 for (let i in images) {
     new Image().src = images[i];
 }
-
+if (window.matchMedia("(min-width: 700px)")){
 for (let col = 0; col < cols; col++) {
     let part = document.createElement('div');
     part.className = 'part';
@@ -181,7 +181,7 @@ function mouseup(e) {
         endY = null;
     }
 }
-if (window.matchMedia("(min-width: 700px)")){
+
 window.addEventListener('mousedown', mousedown, false);
 window.addEventListener('touchstart', mousedown, false);
 window.addEventListener('touchmove', function (e) {
@@ -208,4 +208,20 @@ function wheel(e) {
 
 window.addEventListener('mousewheel', wheel, false);
 window.addEventListener('wheel', wheel, false);
+}
+else{
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("part");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}    
+        x[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 2500);    
+}
 }

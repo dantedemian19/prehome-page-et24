@@ -144,7 +144,7 @@ b {
     text-align: center;
     font-size: 84px;
     display: flex;
-    margin-top: -25px;
+    margin-top: -40px;
 }
 
 a {
@@ -190,6 +190,16 @@ img {
     width: 100px;
     margin-bottom: 30px;
     background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.mySlides {
+  display:none;
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media screen and (max-width: 550px) and (min-width: 420px) {
@@ -199,6 +209,7 @@ img {
 
     h1>p {
         font-size: 26px;
+        margin-top: -60px;
     }
 
     .buttons {
@@ -219,6 +230,7 @@ img {
         font-size: 22px;
         padding: 0 15px;
     }
+    
 
     a:nth-child(2) {
         margin-top: 20px;
@@ -240,6 +252,7 @@ img {
 
     h1>p {
         font-size: 26px;
+        margin-top: -30px;
     }
 
     .buttons {
