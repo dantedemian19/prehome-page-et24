@@ -99,7 +99,7 @@ function infiniteAnimation() {
     window.setTimeout(function () {
         go(1);
         infiniteAnimation();
-    }, 3000);
+    }, 5000);
 }
 
 infiniteAnimation();
