@@ -100,7 +100,7 @@ h1 {
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(1px);
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
     padding: 50px;
     text-transform: uppercase;
     line-height: 4.5rem;
@@ -136,16 +136,21 @@ h1 {
 
 .button {
     display: flex;
-    align-items: center;
-    justify-content: center;
     margin-top: 25px;
+}
+
+b {
+    color: #dfaf1d;
+    text-align: center;
+    font-size: 84px;
+    display: flex;
+    margin-top: -25px;
 }
 
 a {
     text-decoration: none;
     text-align: center;
     font-size: 25px;
-    margin-inline: 10px;
     padding: 5px 20px;
     color: #000;
     background-color: #fff;
@@ -153,12 +158,13 @@ a {
     text-transform: capitalize;
     letter-spacing: .25rem;
     border-radius: 5px;
+    align-self: center;
 }
 
 a:nth-child(1) {
-    position: absolute;
+    /* position: absolute;
     right: calc(50% + 145px);
-    transform: translateX(50%);
+    transform: translateX(50%); */
 }
 
 a:nth-child(2) {
