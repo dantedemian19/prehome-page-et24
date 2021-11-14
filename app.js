@@ -14,7 +14,7 @@ let playing = false;
 for (let i in images) {
     new Image().src = images[i];
 }
-
+if (window.matchMedia("(min-width: 700px)").matches){
 for (let col = 0; col < cols; col++) {
     let part = document.createElement('div');
     part.className = 'part';
@@ -107,7 +107,7 @@ infiniteAnimation();
 function lerp(start, end, amount) {
     return (1 - amount) * start + amount * end
 }
-//if (window.matchMedia("(min-width: 550px)").matches){
+
 const cursor = document.createElement('div');
 cursor.className = 'cursor';
 
@@ -148,9 +148,7 @@ function loop() {
     cursorF.style.left = cursorX - sizeF / 2 + 'px';
     requestAnimationFrame(loop);
 }
-
 loop();
-if (window.matchMedia("(min-width: 700px)").matches){
 let startY;
 let endY;
 let clicked = false;
@@ -210,4 +208,36 @@ function wheel(e) {
 
 window.addEventListener('mousewheel', wheel, false);
 window.addEventListener('wheel', wheel, false);
-}
+}else {
+    let part = document.createElement('div');
+    part.className = 'part';
+    let el = document.createElement('div');
+    el.className = "section";
+    let img = document.createElement('img');
+    img.src = images[current];
+    let img2 = document.createElement('img');
+    el.appendChild(img);
+    part.appendChild(el);
+    main.appendChild(part);
+    setInterval(function () {
+        //fadeOut(img,1000)
+        img.src = images[current];
+       // fadeIn(img,1000);
+            console.log(img.style.opacity);
+    if (current + 1 < images.length) {
+        current++;
+    }else {
+        current = 0;
+    }
+    }, 4000);
+
+    function fadeOut(element, time) {
+        while (element.style.opacity > 0) {
+        this.setTimeout(function(){element.style.opacity = element.style.opacity - 0.1;}, time*0.1);}
+    }
+
+    function fadeIn(element,time) {
+        while (element.style.opacity < 1) {
+        this.setTimeout(function(){element.style.opacity = element.style.opacity + 0.1;}, time*0.1);}
+    }
+    }
