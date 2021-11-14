@@ -152,6 +152,7 @@ a {
     transition: .3s;
     text-transform: capitalize;
     letter-spacing: .25rem;
+    border-radius: 5px;
 }
 
 a:nth-child(1) {
