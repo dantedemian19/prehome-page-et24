@@ -140,7 +140,7 @@ window.addEventListener('mousemove', function (e) {
     cursor.style.left = e.clientX - size / 2 + 'px';
     cursor.style.top = e.clientY - size / 2 + 'px';
 });
-
+}
 function loop() {
     cursorX = lerp(cursorX, pageX, followSpeed);
     cursorY = lerp(cursorY, pageY, followSpeed);
@@ -150,7 +150,7 @@ function loop() {
 }
 
 loop();
-
+if (window.matchMedia("(min-width: 700px)").matches){
 let startY;
 let endY;
 let clicked = false;
