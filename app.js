@@ -107,7 +107,7 @@ infiniteAnimation();
 function lerp(start, end, amount) {
     return (1 - amount) * start + amount * end
 }
-if (window.matchMedia("(min-width: 700px)").matches){
+if (window.matchMedia("(min-width: 550px)").matches){
 const cursor = document.createElement('div');
 cursor.className = 'cursor';
 
