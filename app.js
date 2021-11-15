@@ -11,21 +11,6 @@ let images = [
 let current = 0;
 let playing = false;
 let mobile = false;
-
-for (let i in images) {
-    new Image().src = images[i];
-}
-setInterval(() => {// background responsive
-    mobile=window.matchMedia("(max-width: 700px)").matches;  
-},1000);
-setInterval(() => {// name ET24DE17 responsive
-if (window.matchMedia("(max-width: 461px)").matches){// if its too small
-    document.querySelector("p>b").innerHTML ="ET24DE17";
-}else{
-    document.querySelector("p>b").innerHTML ="ET 24 DE 17";
-}}, 1000);
-if (!mobile){
-    //if its in pc or tablet
 for (let col = 0; col < cols; col++) {
     let part = document.createElement('div');
     part.className = 'part';
@@ -44,6 +29,43 @@ let animOptions = {
     duration: 2.3,
     ease: Power4.easeInOut
 };
+for (let i in images) {
+    new Image().src = images[i];
+}
+setInterval(() => {// background responsive
+    mobile=window.matchMedia("(max-width: 700px)").matches;
+    console.log();
+},1000);
+setInterval(() => {// name ET24DE17 responsive
+if (window.matchMedia("(max-width: 461px)").matches){// if its too small
+    document.querySelector("p>b").innerHTML ="ET24DE17";
+}else{
+    document.querySelector("p>b").innerHTML ="ET 24 DE 17";
+}}, 1000);
+
+//mobile background
+function mobileBackground() {
+    //fadeOut(img,1000)
+    for(let p in parts){
+        let part = parts[p];
+        part.children[0].children[0].src = images[current];
+   // fadeIn(img,1000); 
+}
+if (current + 1 < images.length) {
+    current++;
+}else {
+    current = 0;
+}
+}
+window.setInterval(function () {
+    if(mobile){// verification of device
+    mobileBackground();
+    }else{
+        go(1);
+    }
+}, 4000);
+
+// pc background
 
 function go(dir) {
     if (!playing) {
@@ -106,16 +128,6 @@ window.addEventListener('keydown', function (e) {
     }
 });
 
-function infiniteAnimation() {
-    window.setTimeout(function () {
-        if(mobile==false){// verification of device
-        go(1);
-        infiniteAnimation();
-        }
-    }, 5000);
-}
-
-infiniteAnimation();
 
 function lerp(start, end, amount) {
     return (1 - amount) * start + amount * end
@@ -153,7 +165,7 @@ window.addEventListener('mousemove', function (e) {
     cursor.style.left = e.clientX - size / 2 + 'px';
     cursor.style.top = e.clientY - size / 2 + 'px';
 });
-//}
+
 function loop() {
     cursorX = lerp(cursorX, pageX, followSpeed);
     cursorY = lerp(cursorY, pageY, followSpeed);
@@ -221,28 +233,8 @@ function wheel(e) {
 
 window.addEventListener('mousewheel', wheel, false);
 window.addEventListener('wheel', wheel, false);
-}else {
-    let part = document.createElement('div');
-    part.className = 'part';
-    let el = document.createElement('div');
-    el.className = "section";
-    let img = document.createElement('img');
-    img.src = images[current];
-    let img2 = document.createElement('img');
-    el.appendChild(img);
-    part.appendChild(el);
-    main.appendChild(part);
-    setInterval(function () {
-        if(mobile){// verification of device
-        //fadeOut(img,1000)
-        img.src = images[current];
-       // fadeIn(img,1000);
-    if (current + 1 < images.length) {
-        current++;
-    }else {
-        current = 0;
-    }
-        }},4000);
+
+
 
     function fadeOut(element, time) {
         while (element.style.opacity > 0) {
@@ -253,4 +245,3 @@ window.addEventListener('wheel', wheel, false);
         while (element.style.opacity < 1) {
         this.setTimeout(function(){element.style.opacity = element.style.opacity + 0.1;}, time*0.1);}
     }
-    }   
