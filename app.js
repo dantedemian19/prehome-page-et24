@@ -10,17 +10,22 @@ let images = [
 ];
 let current = 0;
 let playing = false;
+let mobile = false;
 
 for (let i in images) {
     new Image().src = images[i];
 }
-setInterval(() => {
-if (window.matchMedia("(max-width: 461px)").matches){
+setInterval(() => {// background responsive
+    mobile=window.matchMedia("(max-width: 700px)").matches;  
+},1000);
+setInterval(() => {// name ET24DE17 responsive
+if (window.matchMedia("(max-width: 461px)").matches){// if its too small
     document.querySelector("p>b").innerHTML ="ET24DE17";
 }else{
     document.querySelector("p>b").innerHTML ="ET 24 DE 17";
 }}, 1000);
-if (window.matchMedia("(min-width: 700px)").matches){
+if (!mobile){
+    //if its in pc or tablet
 for (let col = 0; col < cols; col++) {
     let part = document.createElement('div');
     part.className = 'part';
@@ -103,8 +108,10 @@ window.addEventListener('keydown', function (e) {
 
 function infiniteAnimation() {
     window.setTimeout(function () {
+        if(mobile==false){// verification of device
         go(1);
         infiniteAnimation();
+        }
     }, 5000);
 }
 
@@ -226,16 +233,16 @@ window.addEventListener('wheel', wheel, false);
     part.appendChild(el);
     main.appendChild(part);
     setInterval(function () {
+        if(mobile){// verification of device
         //fadeOut(img,1000)
         img.src = images[current];
        // fadeIn(img,1000);
-            console.log(img.style.opacity);
     if (current + 1 < images.length) {
         current++;
     }else {
         current = 0;
     }
-    }, 4000);
+        }},4000);
 
     function fadeOut(element, time) {
         while (element.style.opacity > 0) {
