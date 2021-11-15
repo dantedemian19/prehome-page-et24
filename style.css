@@ -113,7 +113,7 @@ h1 {
     justify-content: center;
     backdrop-filter: blur(1px);
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
-    padding: 50px;
+    padding: 10%;
     text-transform: uppercase;
     line-height: 4.5rem;
     letter-spacing: .4rem;
@@ -157,7 +157,7 @@ b {
     text-align: center;
     font-size: 91px;
     line-height: auto;
-    display: flex;
+    display: block;
 }
 
 a {
@@ -321,8 +321,10 @@ img {
     b{
         font-size: 40px;
         line-height: normal;
+        
     }
     h1>p {
+        text-align: center;
         font-size: 30px;
         line-height: 100%;
     }
@@ -401,14 +403,9 @@ img {
     text2{
         display: none;
     }
-    a{margin-top: -45%;}
 }
 
 @media screen and (max-height: 180px){
-    a{margin-top: -50%;}
-}
-
-@media screen and (max-height: 165px){
     b{
         display: none;
     }
