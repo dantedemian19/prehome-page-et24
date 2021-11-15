@@ -12,7 +12,7 @@ body {
     background-image: white;
 }
 #icon{
-    margin-top: 10%;
+    margin-top: 1rem;
 }
 * {
     box-sizing: border-box;
@@ -149,15 +149,15 @@ h1 {
 
 .button {
     display: flex;
-    margin-top: 25px;
+    margin-top: 3%;
 }
 
 b {
     color: #dfaf1d;
     text-align: center;
     font-size: 91px;
+    line-height: auto;
     display: flex;
-    margin-top: -40px;
 }
 
 a {
@@ -171,10 +171,7 @@ a {
     text-transform: capitalize;
     letter-spacing: .25rem;
     border-radius: 5px;
-<<<<<<< HEAD
     align-self: center;
-=======
->>>>>>> 69c433762b0052990b5eb1ceb594c1487a351e8e
 }
 
 a:nth-child(1) {
@@ -196,21 +193,35 @@ a:hover {
 }
 
 h1>p {
-    font-size: 60px;
+    font-size: 35px;
     color: #578bde;
-    margin-top: -5px;
-    letter-spacing: .01rem;
+    margin-top: -10px;
+    letter-spacing: .2rem;
 }
 
 img {
     width: 100px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     position: sticky;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+@media screen and (max-height: 585px) {
+    .buttons {
+        display: none;
+    }
+    .content {
+        display: none;
+    }
+    .cursor {
+        display: none;
+    }
+    .cursor-f {
+        display: none;
+    }
+}
 
 @media screen and (max-width: 550px) and (min-width: 420px) {
     body{
@@ -321,7 +332,7 @@ img {
 
 @media screen and (max-width: 380px) {
     b{
-        font-size: 40px;
+        font-size: 45px;
     }
     h1 {
         font-size: 30px;
@@ -368,5 +379,15 @@ img {
 
     img {
         width: 80px;
+    }
+}
+@media screen and (max-height: 500px) {
+    #icon{
+        display: none;
+    }
+}
+@media screen and (max-height: 345px) {
+    .h1>p{
+        visibility: hidden;
     }
 }
