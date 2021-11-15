@@ -293,7 +293,8 @@ img {
         right: 0 !important;
         transform: translateX(0%) !important;
         font-size: 22px;
-        padding: 0 15px;
+        padding: 20% 15px;
+        text-transform:uppercase;
     }
 
     a:nth-child(2) {
@@ -343,6 +344,7 @@ img {
         transform: translateX(0%) !important;
         font-size: 20px;
         padding: 0 15px;
+
     }
 
     a:nth-child(2) {
@@ -377,6 +379,7 @@ img {
     .cursor-f {
         display: none;
     }
+    a{text-transform:uppercase;}
 }
 
 @media screen and (max-height: 500px) {
