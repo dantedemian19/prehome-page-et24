@@ -208,21 +208,6 @@ img {
     background-size: cover;
 }
 
-@media screen and (max-height: 585px) {
-    .buttons {
-        display: none;
-    }
-    .content {
-        display: none;
-    }
-    .cursor {
-        display: none;
-    }
-    .cursor-f {
-        display: none;
-    }
-}
-
 @media screen and (max-width: 550px) and (min-width: 420px) {
     body{
         overflow-y: hidden;
@@ -285,6 +270,7 @@ img {
 @media screen and (max-width: 420px) and (min-width: 380px) {
     h1 {
         font-size: 45px;
+        line-height: normal;
     }
 
     h1>p {
@@ -332,12 +318,9 @@ img {
 
 @media screen and (max-width: 380px) {
     b{
-        font-size: 45px;
+        font-size: 40px;
+        line-height: normal;
     }
-    h1 {
-        font-size: 30px;
-    }
-
     h1>p {
         font-size: 30px;
         line-height: 100%;
@@ -381,13 +364,49 @@ img {
         width: 80px;
     }
 }
+@media screen and (max-height: 585px) {
+    .buttons {
+        display: none;
+    }
+    .content {
+        display: none;
+    }
+    .cursor {
+        display: none;
+    }
+    .cursor-f {
+        display: none;
+    }
+}
+
 @media screen and (max-height: 500px) {
     #icon{
         display: none;
     }
 }
-@media screen and (max-height: 345px) {
-    .h1>p{
-        visibility: hidden;
+
+@media screen and (max-height: 420px){
+    a{
+        margin-top: auto;
+    }
+    text{
+        display: none;
+    }
+}
+
+@media screen and (max-height: 235px){
+    text2{
+        display: none;
+    }
+    a{margin-top: -45%;}
+}
+
+@media screen and (max-height: 180px){
+    a{margin-top: -50%;}
+}
+
+@media screen and (max-height: 165px){
+    b{
+        display: none;
     }
 }
