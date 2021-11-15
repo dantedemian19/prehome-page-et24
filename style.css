@@ -13,6 +13,7 @@ body {
 }
 #icon{
     margin-top: 1rem;
+    padding-bottom: 10px;
 }
 * {
     box-sizing: border-box;
@@ -317,7 +318,7 @@ img {
     }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 380px){
     b{
         font-size: 40px;
         line-height: normal;
@@ -399,7 +400,12 @@ img {
     }
 }
 
-@media screen and (max-height: 235px){
+@media screen and (max-height: 255px) and (min-width: 380px) {
+    text2{
+        display: none;
+    }
+}
+@media screen and (max-height: 235px) {
     text2{
         display: none;
     }
