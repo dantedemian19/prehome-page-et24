@@ -16,9 +16,9 @@ for (let i in images) {
 }
 setInterval(() => {
 if (window.matchMedia("(max-width: 461px)").matches){
-    document.querySelector("b").innerHTML ="ET24DE17";
+    document.querySelector("p>b").innerHTML ="ET24DE17";
 }else{
-    document.querySelector("b").innerHTML ="ET 24 DE 17";
+    document.querySelector("p>b").innerHTML ="ET 24 DE 17";
 }}, 1000);
 if (window.matchMedia("(min-width: 700px)").matches){
 for (let col = 0; col < cols; col++) {
